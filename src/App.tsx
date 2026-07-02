@@ -249,7 +249,7 @@ export default function App() {
       </section>
 
       {/* ÁREA DEL EDITOR (LIENZO DE TRABAJO) */}
-      <main className="flex-1 overflow-y-auto p-8 flex justify-center bg-slate-50 print:bg-white print:p-0 print:block">
+      <main className="flex-1 overflow-y-auto p-4 sm:p-8 flex justify-center bg-slate-50 print:bg-white print:p-0 print:block">
         <input 
           type="file" 
           accept="image/*" 
@@ -257,12 +257,15 @@ export default function App() {
           onChange={handleImageUpload} 
           className="hidden" 
         />
-        <div className="w-full max-w-3xl min-h-[70vh] bg-white border border-slate-200 print:border-none rounded-xl print:rounded-none p-10 print:p-0 shadow-lg print:shadow-none focus-within:border-blue-500/50 focus-within:shadow-blue-500/10 transition-all duration-300 print:min-h-0">
+        <div 
+          className="w-full max-w-[816px] min-h-[1056px] shrink-0 bg-white border border-slate-200 print:border-none rounded-sm print:rounded-none px-8 py-12 sm:px-24 sm:py-24 print:p-0 shadow-lg print:shadow-none focus-within:border-blue-500/50 focus-within:shadow-blue-500/10 transition-all duration-300 print:min-h-0 cursor-text"
+          onClick={() => editorRef.current?.focus()}
+        >
           <div
             ref={editorRef}
             contentEditable
             onInput={handleInput}
-            className={`w-full min-h-[60vh] print:min-h-0 bg-transparent outline-none text-slate-800 print:text-black leading-relaxed text-base tracking-wide ${alignmentClass}`}
+            className={`w-full min-h-[calc(1056px-12rem)] print:min-h-0 bg-transparent outline-none text-slate-800 print:text-black leading-relaxed text-base tracking-wide ${alignmentClass} cursor-text`}
             placeholder="Comienza a redactar tu informe o análisis aquí..."
             style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
           />
