@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+[contenteditable]:empty:before {
+  content: attr(placeholder);
+  pointer-events: none;
+  display: block; /* Para Firefox */
+  color: #64748b; /* slate-500 */
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; 
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1; /* slate-300 */
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8; /* slate-400 */
+}

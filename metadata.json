@@ -1,0 +1,8 @@
+{
+  "name": "DocSuite Minimal",
+  "description": "Un procesador de texto minimalista con herramientas de formato, modo oscuro y métricas de escritura.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
